@@ -1,0 +1,43 @@
+.col-50-B {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .btn-B {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-B:hover {
+    background-color: #0069d9;
+    border-color: #0069d9;
+  }
+  
+  .icon-container-B {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .fa-cc-visa-B, .fa-cc-amex-B, .fa-cc-mastercard-B, .fa-cc-discover-B {
+    font-size: 30px;
+    color: #ccc;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
