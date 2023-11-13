@@ -63,7 +63,7 @@ const Login = () => {
 
           <button class="btn btn-outline-light btn-lg btn-block form-group-3" type="submit">Log in</button><br/><br/>
           <p className="link">
-                <a href="Signup"><center>Sign Up here</center></a>
+                <a href="Signup"><center>Don't have account Sign Up here</center></a>
               </p>
     
         </div>
