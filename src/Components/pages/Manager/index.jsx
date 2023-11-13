@@ -1,11 +1,23 @@
-import react from "react"
+import React, { useState } from 'react';
 import NavBar from "../../molecules/NavBar";
 import Footer from "../../molecules/Footer";
 import './Manager.css';
 import Swal from 'sweetalert2';
+import supabase from '../../../supa/supabase/supabaseClient';
 
 
+//added
 const Manager = () =>{
+  const [formData, setFormData] = useState({
+    full_name: '',
+    m_id: '',
+    Personal_id: '',
+    DOB: '',
+    email: '',
+    contact: '',
+    password: '',
+  });
+
     const showAlert = () => {
         alert("Your are successfully Registerd.");
       };
@@ -14,7 +26,7 @@ const Manager = () =>{
    
         const fullName = document.getElementById('full_name').value;
         const managerId = document.getElementById('m_id').value;
-        const personal_id = document.getElementById('personal_id').value;
+        const Personal_id = document.getElementById('Personal_id').value;
         const dateOfBirth = document.getElementById('DOB').value;
         const Email = document.getElementById('email').value;
         const Contact = document.getElementById('contact').value;
@@ -28,7 +40,7 @@ const Manager = () =>{
           return false;
           }
         
-          if (personal_id.trim() === '') {
+          if (Personal_id.trim() === '') {
           alert('Please enter your personal id.');
           return false;
           }
@@ -43,11 +55,49 @@ const Manager = () =>{
             title: 'Manager',
             text: "You've successfully registered", 
           });
-    
+    //added
+          insertDataIntoSupabase();
+
           return false;
           
     
         };
+
+        const insertDataIntoSupabase = async () => {
+          try {
+            const { data, error } = await supabase
+              .from('Manager') 
+              .insert([
+                {
+                  full_name: formData.full_name,
+                  m_id: formData.m_id,
+                  Personal_id: formData.Personal_id,
+                  DOB: formData.DOB,
+                  email: formData.email,
+                  contact: formData.contact,
+                  password: formData.password,
+                },
+              ]);
+      
+            if (error) {
+              console.error('Error inserting data into Supabase:', error.message);
+            } else {
+              console.log('Data inserted into Supabase:', data);
+              showAlert();
+            }
+          } catch (error) {
+            console.error('Error connecting to Supabase:', error.message);
+          }
+        };
+
+        const handleInputChange = (e) => {
+          setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+          });
+        };
+
+       
         
         return(
         <div class="background-image4">
@@ -69,8 +119,8 @@ const Manager = () =>{
         <input type="text" class="form-control" id="m_id" name="m_id" placeholder="Enter your manager id"/>
       </div>
       <div class="form-group">
-        <label for="personal_id">NIC</label>
-        <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="Enter your NIC number"/>
+        <label for="Personal_id">NIC</label>
+        <input type="text" class="form-control" id="Personal_id" name="Personal_id" placeholder="Enter your NIC number"/>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
@@ -86,7 +136,7 @@ const Manager = () =>{
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"/>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"  onChange={handleInputChange}/>
       </div>
       <br/>
       <button type="submit" class="btn btn-primary" >Submit</button>
