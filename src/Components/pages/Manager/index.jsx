@@ -25,6 +25,7 @@ const Manager = () => {
   const gatDataIntoSupabase = async (e) => {
     e.preventDefault();
 
+
     const personalId = document.getElementById('Personal_id').value;
     const fullName = document.getElementById('full_name').value;
     const dateOfBirth = document.getElementById('DOB').value;
@@ -39,6 +40,7 @@ const Manager = () => {
     }
 
     const formDataToUpdateSupabase = {
+
       
       Personal_id: personalId,
       fullName:fullName,
@@ -49,8 +51,8 @@ const Manager = () => {
     };
 
     insertDataIntoSupabase(formDataToUpdateSupabase);
-    
-  };
+
+    };
   
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
@@ -75,7 +77,6 @@ const Manager = () => {
       console.log('Error connecting to Supabase: ' + error.message);
     }
   };
-
   return (
     <div className="background-image4">
       <div className="manager">
