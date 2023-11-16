@@ -21,7 +21,7 @@ const Home = () => {
       <div id="carouselExampleDark" className="carousel carousel-dark slide">
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="10000">
-          <br /><br />
+         
             <p className="home-para1"><center>A Tea Factory with a Heart</center></p>
             <br /><br />
             <p className="home-para2"><center>Welcome to The Tea Leaf !</center></p>
