@@ -39,7 +39,8 @@ const Manager = () => {
       return;
     }
 
-    const formDataToUpdateSupabase = {   
+
+    const formDataToUpdateSupabase = {
       Personal_id: personalId,
       fullName:fullName,
       dateOfBirth: new Date(dateOfBirth).toISOString(),
@@ -50,15 +51,13 @@ const Manager = () => {
 
     insertDataIntoSupabase(formDataToUpdateSupabase);
 
-    
-  };
+    };
   
 
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
       const { data, error } = await supabase.from('Manager').insert([
         {
-
           Personal_id: formDataToUpdateSupabase.Personal_id,
           full_name: formDataToUpdateSupabase.fullName,
           DOB: formDataToUpdateSupabase.dateOfBirth,
@@ -68,7 +67,6 @@ const Manager = () => {
         },
       ]);
 
-  
       if (error) {
         alert('Error inserting data into Supabase: ' + error.message);
       } else {
@@ -80,7 +78,6 @@ const Manager = () => {
 
     }
   };
-
   return (
     <div className="background-image4">
       <div className="manager">
