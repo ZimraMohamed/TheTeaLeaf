@@ -54,6 +54,10 @@
   
     color: #ffffff; 
   }
+  .navbar .nav-link[href="loan"] {
+  
+    color: #ffffff; 
+  }
   
   .navbar-nav .nav-link:hover {
   
