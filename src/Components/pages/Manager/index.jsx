@@ -25,8 +25,9 @@ const Manager = () => {
   const gatDataIntoSupabase = async (e) => {
     e.preventDefault();
 
-    const fullName = document.getElementById('full_name').value;
+
     const personalId = document.getElementById('Personal_id').value;
+    const fullName = document.getElementById('full_name').value;
     const dateOfBirth = document.getElementById('DOB').value;
     const email = document.getElementById('email').value;
     const contact = document.getElementById('contact').value;
@@ -38,9 +39,9 @@ const Manager = () => {
       return;
     }
 
-    const formDataToUpdateSupabase = {
-      fullName,
+    const formDataToUpdateSupabase = {   
       Personal_id: personalId,
+      fullName:fullName,
       dateOfBirth: new Date(dateOfBirth).toISOString(),
       Email: email,
       Contact: contact,
@@ -48,15 +49,18 @@ const Manager = () => {
     };
 
     insertDataIntoSupabase(formDataToUpdateSupabase);
+
+    
   };
+  
 
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
       const { data, error } = await supabase.from('Manager').insert([
         {
-          
-          full_name: formDataToUpdateSupabase.fullName,
+
           Personal_id: formDataToUpdateSupabase.Personal_id,
+          full_name: formDataToUpdateSupabase.fullName,
           DOB: formDataToUpdateSupabase.dateOfBirth,
           email: formDataToUpdateSupabase.Email,
           contact: formDataToUpdateSupabase.Contact,
@@ -64,14 +68,16 @@ const Manager = () => {
         },
       ]);
 
+  
       if (error) {
-        alert('Error inserting data into Supabase:', error.message);
+        alert('Error inserting data into Supabase: ' + error.message);
       } else {
-        alert('Data inserted into Supabase:', data);
+        alert('Data inserted into Supabase: ' + JSON.stringify(data));
         showAlert('You are successfully registered.');
       }
     } catch (error) {
-      alert('Error connecting to Supabase:', error.message);
+      console.log('Error connecting to Supabase: ' + error.message);
+
     }
   };
 
