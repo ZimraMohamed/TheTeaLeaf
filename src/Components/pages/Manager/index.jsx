@@ -41,6 +41,7 @@ const Manager = () => {
 
 
     const formDataToUpdateSupabase = {
+
       Personal_id: personalId,
       fullName:fullName,
       dateOfBirth: new Date(dateOfBirth).toISOString(),
@@ -53,7 +54,6 @@ const Manager = () => {
 
     };
   
-
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
       const { data, error } = await supabase.from('Manager').insert([
@@ -66,7 +66,7 @@ const Manager = () => {
           password: formDataToUpdateSupabase.password,
         },
       ]);
-
+  
       if (error) {
         alert('Error inserting data into Supabase: ' + error.message);
       } else {
