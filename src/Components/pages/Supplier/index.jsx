@@ -66,10 +66,6 @@ const supplier = () =>{
           <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter your full name"/>
         </div>
         <div class="form-group">
-          <label for="supplier-id">supplier ID</label>
-          <input type="text" class="form-control" id="supplier-id" name="supplier-id" placeholder="Enter your supplier-id"/>
-        </div>
-        <div class="form-group">
           <label for="nic">NIC</label>
           <input type="tel" class="form-control" id="nic" name="nic" placeholder="Enter your NIC number"/>
         </div>
