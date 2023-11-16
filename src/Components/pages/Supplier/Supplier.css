@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 .background-image4 {
-<<<<<<< HEAD
-    background: url('C:\Users\ASUS\Downloads\d7.jpg') center/cover no-repeat;
-=======
     background: url('C:\Users\User\Downloads\WhatsApp Image 2023-10-24 at 2.52.37 PM.jpeg') center/cover no-repeat;
->>>>>>> 4f2ff3388cdbc22c77c8dc4a33cbee458dffa4e6
     height: 100vh;
     display: flex;
     justify-content: center;

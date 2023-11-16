@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import supabase from '../../../supa/supabase/supabaseClient';
 
 
+
 const Supplier = () => {
   
   const [formData, setFormData] = useState({

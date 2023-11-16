@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 .background-image5 {
-
     background: url('C:\Users\User\Downloads\WhatsApp Image 2023-10-24 at 2.52.37 PM.jpeg') center/cover no-repeat;
     height: 250vh;
     display: flex;
@@ -13,7 +12,7 @@
   
   .customer {
     position: absolute;
-    margin-top: 23%;
+    margin-top: 40%;
     padding-bottom: 100%;
     padding: 20px;
     border-radius: 10px;

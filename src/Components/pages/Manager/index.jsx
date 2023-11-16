@@ -41,6 +41,7 @@ const Manager = () => {
 
 
     const formDataToUpdateSupabase = {
+
       Personal_id: personalId,
       fullName:fullName,
       dateOfBirth: new Date(dateOfBirth).toISOString(),
