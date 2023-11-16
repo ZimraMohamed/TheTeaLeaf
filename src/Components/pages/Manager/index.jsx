@@ -39,9 +39,9 @@ const Manager = () => {
       return;
     }
 
+
     const formDataToUpdateSupabase = {
 
-      
       Personal_id: personalId,
       fullName:fullName,
       dateOfBirth: new Date(dateOfBirth).toISOString(),
@@ -75,6 +75,7 @@ const Manager = () => {
       }
     } catch (error) {
       console.log('Error connecting to Supabase: ' + error.message);
+
     }
   };
   return (
