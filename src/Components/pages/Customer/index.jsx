@@ -1,110 +1,180 @@
-import react from "react"
+import React, { useState } from 'react';
 import NavBar from "../../molecules/NavBar";
 import Footer from "../../molecules/Footer";
 import './Customer.css';
 import Swal from 'sweetalert2';
+import supabase from '../../../supa/supabase/supabaseClient';
 
-const Customer = () =>{
-    const showAlert = () => {
-        alert("Your are successfully Registerd.");
-      };
+
+const Customer = () => {
+  
+  const [formData, setFormData] = useState({
+    fullName: '',
+    m_id: '',
+    Personal_id: '',
+    dateOfBirth: '',
+    Email: '',
+    Contact: '',
+    password: '',
+    country:'',
+    companyName:'',
+  });
+
+  const showAlert = (message) => {
+    alert(message);
+  };
+
+  const gatDataIntoSupabase = async (e) => {
+    e.preventDefault();
+
+    const personalId = document.getElementById('Personal_id').value;
+    const fullName = document.getElementById('full_name').value;
+    const dateOfBirth = document.getElementById('DOB').value;
+    const email = document.getElementById('email').value;
+    const contact = document.getElementById('contact').value;
+    const password = document.getElementById('password').value;
+    const country = document.getElementById('country').value;
+    const company_name = document.getElementById('company_name').value;
+
     
-      const validateForm = () => {
-   
-        const fullName = document.getElementById('full_name').value;
-        const managerId = document.getElementById('customer-id').value;
-        const Nic = document.getElementById('nic').value;
-        const dateOfBirth = document.getElementById('dob').value;
-        const Email = document.getElementById('email').value;
-        const Contact = document.getElementById('contact').value;
-        if (fullName.trim() === '') {
-          alert('Please enter your full name.');
-          return false;
-          }
-        
-          if (managerId.trim() === '') {
-          alert('Please enter your customer-id.');
-          return false;
-          }
-        
-          if (Nic.trim() === '') {
-          alert('Please enter your nic.');
-          return false;
-          }
-          if(    dateOfBirth.trim() === '' ||
-          Email.trim() === '' ||
-          Contact.trim() === '')
-          {
-          alert('Please fill out all fields.');
-          return false;
-          }
-          Swal.fire({
-            title: 'Customer',
-            text: "You've successfully registered", 
-          });
-    
-          return false;
-          
-    
-        };
-    
-      return(
-        <div class="background-image5">
-        <div className="customer">
-        <div class="customer-container">
-          <form action="/submit-form" method="post" onSubmit={(e)=>{   
-            e.preventDefault(); 
-              if (validateForm()) {
-                document.forms[0].submit();
-          }
-              }}>
-          <h1 id="header_18" class="form-header" data-component="header">Customer</h1>
-      <div class="form-group">
-        <label for="full_name">Full Name</label>
-        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter your full name"/>
-      </div>
-      <div class="form-group">
-        <label for="customer-id">Customer ID</label>
-        <input type="text" class="form-control" id="customer-id" name="customer-id" placeholder="Enter your customer id"/>
-      </div>
-      <div class="form-group">
-        <label for="nic">NIC</label>
-        <input type="tel" class="form-control" id="nic" name="nic" placeholder="Enter your NIC number"/>
-      </div>
-      <div class="form-group">
-        <label for="company-name">Company Name</label>
-        <input type="company-name" class="form-control" id="company-name" name="company-name" placeholder="Enter your company name"/>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address"/>
-      </div>
-      <div class="form-group">
-        <label for="dob">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" name="dob"/>
-      </div>
-      <div class="form-group">
-        <label for="country">Country</label>
-        <input type="country" class="form-control" id="country" name="country" placeholder="Enter the country "/>
-      </div>
-      <div class="form-group">
-        <label for="contact">Contact Number</label>
-        <input type="contact" class="form-control" id="contact" name="contact" placeholder="Enter the contact number "/>
-      </div>
-      <div class="form-group">
-    <label for="time">Country</label>
-    <select class="form-control" id="type" name="type">
-      <option value="local">from SriLanka</option>
-      <option value="foreign">from another country</option>
-    </select>
-  </div>
-      <br/>
-      <button type="submit" class="btn btn-primary" onClick={validateForm}>Submit</button>
-    </form>
-        </div>
-        </div>
-        </div>
-      )
+    if (!fullName || !personalId || !dateOfBirth || !email || !contact || !password || !country || !company_name) {
+      showAlert('Please fill out all fields.');
+      return;
     }
+
+    const formDataToUpdateSupabase = {
+      
+      Personal_id: personalId,
+      fullName:fullName,
+      dateOfBirth: new Date(dateOfBirth).toISOString(),
+      Email: email,
+      Contact: contact,
+      password: password,
+      country: country,
+      company_name: company_name,
+    };
+
+    insertDataIntoSupabase(formDataToUpdateSupabase);
+    
+  };
+  
+  const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
+    try {
+      const { data, error } = await supabase.from('Customer').insert([
+        {
+          Personal_id: formDataToUpdateSupabase.Personal_id,
+          full_name: formDataToUpdateSupabase.fullName,
+          DOB: formDataToUpdateSupabase.dateOfBirth,
+          email: formDataToUpdateSupabase.Email,
+          contact: formDataToUpdateSupabase.Contact,
+          password: formDataToUpdateSupabase.password,
+          country: formDataToUpdateSupabase.country,
+          company_name: formDataToUpdateSupabase.company_name,
+        },
+      ]);
+  
+      if (error) {
+        alert('Error inserting data into Supabase: ' + error.message);
+      } else {
+        alert('Data inserted into Supabase: ' + JSON.stringify(data));
+        showAlert('You are successfully registered.');
+      }
+    } catch (error) {
+      console.log('Error connecting to Supabase: ' + error.message);
+    }
+  };
+
+  return (
+    <div className="background-image4">
+      <div className="customer">
+        <div className="customer-container">
+          <form onSubmit={gatDataIntoSupabase}>
+            <h1 className="form-header" data-component="header">
+              customer
+            </h1>
+            <div className="form-group">
+              <label htmlFor="full_name">Full Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="full_name"
+                name="full_name"
+                placeholder="Enter your full name"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="Personal_id">NIC</label>
+              <input
+                type="text"
+                className="form-control"
+                id="Personal_id"
+                name="Personal_id"
+                placeholder="Enter your NIC number"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="DOB">Date of Birth</label>
+              <input type="date" className="form-control" id="DOB" name="DOB" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="contact">Contact</label>
+              <input
+                type="contact"
+                className="form-control"
+                id="contact"
+                name="contact"
+                placeholder="Enter your contact numbers"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="company_name">Company Name</label>
+              <input
+                type="company_name"
+                className="form-control"
+                id="company_name"
+                name="company_name"
+                placeholder="Enter your company name"
+              />
+              </div>
+            <div className="form-group">
+              <label htmlFor="country">Country</label>
+              <input
+                type="country"
+                className="form-control"
+                id="country"
+                name="country"
+                placeholder="Enter your country"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+              />
+            </div>
+            <br />
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Customer;

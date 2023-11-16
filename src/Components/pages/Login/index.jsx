@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login1.css';
 import React, { useState } from "react";
-import { createClient } from '@supabase/supabase-js';
+import supabase from '../../../supa/supabase/supabaseClient';
 
 const Login = () => {
 
