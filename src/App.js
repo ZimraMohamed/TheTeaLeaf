@@ -15,6 +15,9 @@ import AddLocation from './Components/pages/AddLocation';
 import Loan from './Components/pages/Loan';
 
 
+
+
+
 function App() {
   return (
     
@@ -32,9 +35,8 @@ function App() {
         <Route path="ExploreProducts" element={<ExploreProducts/>}/>
         <Route path="buyNow" element={<BuyNow/>}/>
         <Route path="AddLocation" element={<AddLocation/>}/>
-        <Route path="Loan" element={<Loan/>}/>
-        
-      </Routes>
+        <Route path="loan" element={<Loan/>}/>
+       </Routes>
       </BrowserRouter>
       <Footer/>
    

@@ -1,3 +1,4 @@
+
 import react from "react"
 import NavBar from "../../molecules/NavBar";
 import Footer from "../../molecules/Footer";
@@ -37,14 +38,4 @@ return (
 
     
 }
-
-
-
-
-
-
-
-
-
-
 export default Loan;
