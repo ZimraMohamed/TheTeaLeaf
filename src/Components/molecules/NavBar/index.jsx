@@ -22,7 +22,6 @@ const NavBar=()=>{
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Location">Location</a>
         </li>
@@ -35,6 +34,13 @@ const NavBar=()=>{
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="exploreproducts">ExploreProducts</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="loan">Loan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Dashboard">Dashboard</a>
+        </li>
+        
        
       </ul>
     </div>
