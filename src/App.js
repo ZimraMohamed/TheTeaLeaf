@@ -12,6 +12,9 @@ import BuyNow from './Components/pages/BuyNow';
 import Customer from './Components/pages/Customer';
 import ExploreProducts from './Components/pages/ExploreProducts';
 import AddLocation from './Components/pages/AddLocation';
+import Loan from './Components/pages/Loan';
+
+
 
 
 
@@ -32,8 +35,8 @@ function App() {
         <Route path="ExploreProducts" element={<ExploreProducts/>}/>
         <Route path="buyNow" element={<BuyNow/>}/>
         <Route path="AddLocation" element={<AddLocation/>}/>
-        
-      </Routes>
+        <Route path="loan" element={<Loan/>}/>
+       </Routes>
       </BrowserRouter>
       <Footer/>
    
