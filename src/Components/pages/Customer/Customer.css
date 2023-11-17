@@ -2,6 +2,7 @@
 
 .background-image5 {
 
+
     background: url('C:\Users\Udeera\Downloads\tea.jpg') center/cover no-repeat;
     height: 250vh;
     display: flex;
@@ -13,7 +14,7 @@
   
   .customer {
     position: absolute;
-    margin-top: 40%;
+    margin-top: 22%;
     padding-bottom: 100%;
     padding: 20px;
     border-radius: 10px;
