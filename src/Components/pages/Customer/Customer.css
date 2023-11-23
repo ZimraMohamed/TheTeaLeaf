@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 .background-image5 {
+
     background: url('C:\Users\ASUS\Downloads\d7.jpg') center/cover no-repeat;
+
     height: 250vh;
     display: flex;
     justify-content: center;
@@ -12,7 +14,7 @@
   
   .customer {
     position: absolute;
-    margin-top: 40%;
+    margin-top: 22%;
     padding-bottom: 100%;
     padding: 20px;
     border-radius: 10px;
