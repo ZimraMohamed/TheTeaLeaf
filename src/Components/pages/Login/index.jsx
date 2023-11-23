@@ -1,4 +1,3 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login1.css';
 import React, { useState } from "react";
@@ -19,7 +18,7 @@ const Login = () => {
       <div class="d-flex mb-3 justify-content-start logo-container" 
            id="logo-container">
         <div id="login-success-bubble">
-          Hi, Kalle!
+          
           <div class="arrow"></div>
         </div>
           <div id="logo" class="letter-container slide-in">
@@ -63,7 +62,7 @@ const Login = () => {
 
           <button class="btn btn-outline-light btn-lg btn-block form-group-3" type="submit">Log in</button><br/><br/>
           <p className="link">
-                <a href="Signup"><center>Don't have account Sign Up here</center></a>
+                <a href="Signup"><center>Don't have an account Sign Up here</center></a>
               </p>
     
         </div>
