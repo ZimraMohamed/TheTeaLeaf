@@ -1,6 +1,4 @@
 import react from "react"
-import NavBar from "../../molecules/NavBar";
-import Footer from "../../molecules/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './BuyNow.css';
 
@@ -37,8 +35,8 @@ const BuyNow = () =>{
                     <input type="text" id="cvv" name="cvv" placeholder="352"/>
                   </div>
                 </div>
-            <div class= "btn-B">
-            <input type="submit" value="Continue" class="btn"/>
+            <div class= "btn-BB">
+            <a class="btn-0" aria-current="page" href="/">Payment</a>
             </div>
             </div>
             </div>

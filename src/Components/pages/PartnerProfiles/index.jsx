@@ -1,12 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PartnerProfiles.css';
-import Swal from 'sweetalert2';
 import supabase from '../../../supa/supabase/supabaseClient';
 
-
 const PartnerProfile = () => {
-  
   const [formData, setFormData] = useState({
     lot_id: '',
     total: '',
@@ -14,9 +11,15 @@ const PartnerProfile = () => {
     email: '',
     plucked_date: '',
     Personal_id: '',
-    
-   
   });
+
+
+  useEffect(() => {
+    const personalId = localStorage.getItem('personalId');
+    if (personalId) {
+      setFormData((prevData) => ({ ...prevData, Personal_id: personalId }));
+    }
+  }, []);
 
 
   const showAlert = (message) => {
@@ -24,18 +27,12 @@ const PartnerProfile = () => {
   };
 
 
-  const gatDataIntoSupabase = async (e) => {
+  const getDataIntoSupabase = async (e) => {
+
     e.preventDefault();
 
+    const { lot_id, total, email, weight, plucked_date, Personal_id } = formData;
 
-    const lot_id = document.getElementById('lot_id').value;
-    const total = document.getElementById('total').value;
-    const email = document.getElementById('email').value;
-    const weight = document.getElementById('weight').value;
-    const plucked_date = document.getElementById('plucked_date').value;
-    const Personal_id = document.getElementById('Personal_id').value;
-
-    
     if (!lot_id || !total || !email || !plucked_date || !Personal_id || !weight) {
       showAlert('Please fill out all fields.');
       return;
@@ -43,7 +40,6 @@ const PartnerProfile = () => {
 
 
     const formDataToUpdateSupabase = {
-
       lot_id: lot_id,
       total: total,
       plucked_date: new Date(plucked_date).toISOString(),
@@ -53,9 +49,7 @@ const PartnerProfile = () => {
     };
 
     insertDataIntoSupabase(formDataToUpdateSupabase);
-
-    };
-  
+  };
 
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
@@ -71,42 +65,46 @@ const PartnerProfile = () => {
       ]);
 
       if (error) {
-        alert('Error inserting data into Supabase: ' + error.message);
+        alert('Invalid Account.' );
       } else {
-        alert('Data inserted into Supabase: ' + JSON.stringify(data));
-        showAlert('You are successfully registered.');
+        alert('Form submitted. ' + JSON.stringify(data));
+        
       }
     } catch (error) {
       console.log('Error connecting to Supabase: ' + error.message);
-
     }
   };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   return (
     <div className="background-image-a">
       <div className="manager">
         <div className="manager-container">
-          <form onSubmit={gatDataIntoSupabase}>
-            <h1 className="form-header" data-component="header">
-              Tea Leaf Supply Lot
-            </h1>
+          <form onSubmit={getDataIntoSupabase}>
             <div className="form-group">
               <label htmlFor="Personal_id">NIC</label>
               <input
-                type="Personal_id"
+                type="text"
                 className="form-control"
                 id="Personal_id"
                 name="Personal_id"
                 placeholder="Enter your NIC number"
+                value={formData.Personal_id}
+                onChange={handleInputChange}
               />
-            </div>
-            <div className="form-group">
-              <label htmlFor="lot_id">Lot id</label>
+              <label htmlFor="lot_id">Lot ID</label>
               <input
                 type="text"
                 className="form-control"
                 id="lot_id"
                 name="lot_id"
-                placeholder="Enter your lot id"
+                placeholder="Enter your lot ID"
+                value={formData.lot_id}
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group">
@@ -117,8 +115,11 @@ const PartnerProfile = () => {
                 id="total"
                 name="total"
                 placeholder="Enter your number of tea bags"
+                value={formData.total}
+                onChange={handleInputChange}
               />
-                <div className="form-group">
+            </div>
+            <div className="form-group">
               <label htmlFor="weight">Weight</label>
               <input
                 type="weight"
@@ -126,25 +127,33 @@ const PartnerProfile = () => {
                 id="weight"
                 name="weight"
                 placeholder="Enter your weight"
+                value={formData.weight}
+                onChange={handleInputChange}
               />
-            </div>
             </div>
             <div className="form-group">
               <label htmlFor="plucked_date">Plucked date</label>
-              <input type="date" className="form-control" id="plucked_date" name="plucked_date" />
+              <input
+                type="date"
+                className="form-control"
+                id="plucked_date"
+                name="plucked_date"
+                value={formData.plucked_date}
+                onChange={handleInputChange}
+              />
             </div>
-        
             <div className="form-group">
-              <label htmlFor="email">email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 className="form-control"
                 id="email"
                 name="email"
                 placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleInputChange}
               />
             </div>
-            <br />
             <button type="submit" className="btn btn-primary">
               Submit
             </button>

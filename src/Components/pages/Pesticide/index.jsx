@@ -1,154 +1,54 @@
-import React, { useState } from 'react';
-import NavBar from "../../molecules/NavBar";
-import Footer from "../../molecules/Footer";
-import Swal from 'sweetalert2';
-import supabase from '../../../supa/supabase/supabaseClient';
+
+import React, { useState } from "react";
+import carbo from './carbosalfan.webp';
+import guard from './Guardian.jpg';
+import thio from './thioxam.png';
+import './Pesticide.css';
 
 
-const Manager = () => {
-  
-  const [formData, setFormData] = useState({
-    fullName: '',
-    m_id: '',
-    Personal_id: '',
-    dateOfBirth: '',
-    Email: '',
-    Contact: '',
-    password: '',
-  });
-
-  const showAlert = (message) => {
-    alert(message);
-  };
-
-  const gatDataIntoSupabase = async (e) => {
-    e.preventDefault();
-
-
-    const personalId = document.getElementById('Personal_id').value;
-    const fullName = document.getElementById('full_name').value;
-    const dateOfBirth = document.getElementById('DOB').value;
-    const email = document.getElementById('email').value;
-    const contact = document.getElementById('contact').value;
-    const password = document.getElementById('password').value;
-
-    
-    if (!fullName || !personalId || !dateOfBirth || !email || !contact || !password) {
-      showAlert('Please fill out all fields.');
-      return;
-    }
-
-
-    const formDataToUpdateSupabase = {
-
-      Personal_id: personalId,
-      fullName:fullName,
-      dateOfBirth: new Date(dateOfBirth).toISOString(),
-      Email: email,
-      Contact: contact,
-      password: password,
-    };
-
-    insertDataIntoSupabase(formDataToUpdateSupabase);
-
-    };
-  
-
-  const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
-    try {
-      const { data, error } = await supabase.from('Manager').insert([
-        {
-          Personal_id: formDataToUpdateSupabase.Personal_id,
-          full_name: formDataToUpdateSupabase.fullName,
-          DOB: formDataToUpdateSupabase.dateOfBirth,
-          email: formDataToUpdateSupabase.Email,
-          contact: formDataToUpdateSupabase.Contact,
-          password: formDataToUpdateSupabase.password,
-        },
-      ]);
-
-      if (error) {
-        alert('Error inserting data into Supabase: ' + error.message);
-      } else {
-        alert('Data inserted into Supabase: ' + JSON.stringify(data));
-        showAlert('You are successfully registered.');
-      }
-    } catch (error) {
-      console.log('Error connecting to Supabase: ' + error.message);
-
-    }
-  };
+const Pesticide= () => {
+ 
   return (
-    <div className="background-image4">
-      <div className="manager">
-        <div className="manager-container">
-          <form onSubmit={gatDataIntoSupabase}>
-            <h1 className="form-header" data-component="header">
-              Manager
-            </h1>
-            <div className="form-group">
-              <label htmlFor="full_name">Full Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="full_name"
-                name="full_name"
-                placeholder="Enter your full name"
-              />
+    <div>
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col">
+          <div className="card1">
+            <div className="card1-body">
+              <img src={carbo} alt="theTeaLeaf" width="300px" height="300px" />
+              <h5 className="card1-title">Carbosulfan</h5>
+              <p className="card1-text">Price: 1850 Rs<br />1549 ml/ha</p>
+              <br /><br />
+              <a className="btn-0" aria-current="page" href="Loan">Apply</a>
             </div>
-            <div className="form-group">
-              <label htmlFor="Personal_id">NIC</label>
-              <input
-                type="text"
-                className="form-control"
-                id="Personal_id"
-                name="Personal_id"
-                placeholder="Enter your NIC number"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter your email address"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="DOB">Date of Birth</label>
-              <input type="date" className="form-control" id="DOB" name="DOB" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="contact">Contact</label>
-              <input
-                type="contact"
-                className="form-control"
-                id="contact"
-                name="contact"
-                placeholder="Enter your contact numbers"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-              />
-            </div>
-            <br />
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
+          </div>
+        </div>
+        <div class="col">
+    <div class="card1">
+      <div class="card1-body">
+      <img src={guard} alt="theTeaLeaf" width="300px" height="300px" />
+        <h5 class="card1-title">Thiamethoxam</h5>
+        <p class="card1-text">Price: 2150 Rs<br/>600 ml/ha</p>
+        <br/><br/>
+        <a class="btn-0" aria-current="page" href="Loan">Apply</a>
+      </div>
+      </div>
+    </div>
+  <div class="col">
+    <div class="card1">
+      <div class="card1-body">
+      <img src={thio} alt="theTeaLeaf" width="300px" height="300px" />
+        <h5 class="card1-title">Diazinon</h5>
+        <p class="card1-text">Price: 1900 Rs<br/>1600 ml/ha</p>
+        <br/><br/>
+        <a class="btn-0" aria-current="page" href="Loan">Apply</a>
         </div>
       </div>
     </div>
+    </div>
+    </div>
+      
   );
 };
 
-export default Manager;
+export default Pesticide;
+
