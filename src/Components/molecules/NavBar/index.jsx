@@ -34,6 +34,7 @@ const NavBar=()=>{
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="exploreproducts">ExploreProducts</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="loan"><div class="dropdown">
   <button class="toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,6 +49,7 @@ const NavBar=()=>{
         </a>
         </li>
        </ul>
+
 
     </div>
   </div>

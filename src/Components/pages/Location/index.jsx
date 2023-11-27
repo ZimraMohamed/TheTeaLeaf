@@ -30,8 +30,9 @@ const Location = () => {
   }, []);
 
   return (
+  <div className="background-LocationPic">"
     <div className='locate'>
-      <h2>Find our locations here</h2>
+      <h1>Find our locations here</h1>
 
       <table>
         <thead>
@@ -51,6 +52,7 @@ const Location = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };
