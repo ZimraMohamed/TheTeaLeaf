@@ -13,9 +13,8 @@ import Customer from './Components/pages/Customer';
 import ExploreProducts from './Components/pages/ExploreProducts';
 import AddLocation from './Components/pages/AddLocation';
 import Loan from './Components/pages/Loan';
-
-
-
+import Pesticide from './Components/pages/Pesticide';
+import Fertilizer from './Components/pages/Fertilizer';
 
 
 function App() {
@@ -26,6 +25,7 @@ function App() {
       <BrowserRouter>
       <Routes>
       <Route path="/" element={<Home />} />
+
         <Route path="Login" element={<Login />} />
         <Route path="Customer" element={<Customer/>}/>
         <Route path="Manager" element={<Manager/>}/>
@@ -36,6 +36,9 @@ function App() {
         <Route path="buyNow" element={<BuyNow/>}/>
         <Route path="AddLocation" element={<AddLocation/>}/>
         <Route path="loan" element={<Loan/>}/>
+        <Route path="Pesticide" element={<Pesticide/>}/>
+        <Route path="fertilizer" element={<Fertilizer/>}/>
+        
        </Routes>
       </BrowserRouter>
       <Footer/>

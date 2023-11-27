@@ -26,11 +26,11 @@ return(
 </div>
 <div class="mb-3">
   <label for="lot-id" class="form-label">Lot Id</label>
-  <input type="userId" class="form-control custom-input-width" id="lot-id" aria-describedby="UIHelp"placeholder="Enter your User Id"/>
+  <input type="userId" class="form-control custom-input-width" id="lot-id" aria-describedby="UIHelp"placeholder="Enter your Lot Id"/>
 </div>
 <div class="mb-3">
   <label for="exampleInputAmount" class="form-label">Amount</label>
-  <input type="amount" class="form-control custom-input-width" id="exampleInputAmount" aria-describedby="AmountHelp"placeholder="Enter your NIC Amount"/>
+  <input type="amount" class="form-control custom-input-width" id="exampleInputAmount" aria-describedby="AmountHelp"placeholder="Enter your  Amount"/>
 </div>
 <div class="mb-3">
   <label for="weight" class="form-label">Weight</label>

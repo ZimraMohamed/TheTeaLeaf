@@ -14,10 +14,7 @@ const Footer = () => {
     </div>
     <div class="container">
       <div class="row">
-       
-          <p class="copyright-text">Copyright 2023 All Rights Reserved.</p>
-        
-
+       <p class="copyright-text">Copyright 2023 All Rights Reserved.</p>
       </div>
     </div>
 </footer>
