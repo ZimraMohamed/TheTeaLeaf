@@ -9,8 +9,9 @@ const BuyNow = () =>{
 
     return(
       
-              
+      <div className="background-BuyNowPic">"
               <div class="col-50-B">
+                <div className="payment">
                 <h3>Payment</h3>
                 <label for="fname">Accepted Cards</label>
                 <div class="icon-container-B">
@@ -40,8 +41,8 @@ const BuyNow = () =>{
             <input type="submit" value="Continue" class="btn"/>
             </div>
             </div>
-          
-    
+            </div>
+    </div>
 
     )
 }
