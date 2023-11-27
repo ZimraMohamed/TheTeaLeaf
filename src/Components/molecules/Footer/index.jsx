@@ -1,8 +1,10 @@
 import React from 'react';
 import './index.css'; 
+import'./contact.css';
 
 const Footer = () => {
   return (
+    <section>
     <footer class="site-footer">
     <div class="container">
       <div class="row">
@@ -14,10 +16,50 @@ const Footer = () => {
     </div>
     <div class="container">
       <div class="row">
-       <p class="copyright-text">Copyright 2023 All Rights Reserved.</p>
+      <br /><br />
+       < h3 class="section-header">Contact</h3>
+  <div class="contact-wrapper">
+    <form id="contact-form" class="form-horizontal" role="form">
+       
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required/>
+        </div>
+      </div>
+      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+      <br /> 
+        <div class="alt-send-button">
+        <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+            </div>
+    </form>
+      <div class="direct-contact-container">
+
+        <ul class="contact-list">
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">City, State</span></i></li>
+          
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(+94)076 1010 000 </a></span></i></li>
+          
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">thetealeaf23@gmail.com</a></span></i></li>
+
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text FB"><a href="https://www.facebook.com/profile.php?id=100067867170062&mibextid=ZbWKwL" title="Follow this page"> Andaradeniya Tea Factory</a></span></i></li>
+        </ul>
+        <hr/>
+        <div class="copyright">&copy; 2023 All Rights Reserved.</div>
+      </div>
+  </div>
       </div>
     </div>
-</footer>
+    </footer>
+    </section>
+
  );
 };
 

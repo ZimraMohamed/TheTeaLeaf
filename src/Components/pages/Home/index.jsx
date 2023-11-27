@@ -21,11 +21,11 @@ const Home = () => {
       <div id="carouselExampleDark" className="carousel carousel-dark slide">
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="10000">
-         
+            
             <p className="home-para1"><center>A Tea Factory with a Heart</center></p>
             <br /><br />
             <p className="home-para2"><center>Welcome to The Tea Leaf !</center></p>
-            
+            <br /><br />
             <p className="home-para">
               <br /><br />At Andaradeniya Group, we are more than just a tea factory <b>we are a company with a heart.</b>
               <br /> Our unwavering commitment to corporate social responsibility reflects our deep appreciation for the Deniyaya community's support over the years.

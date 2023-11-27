@@ -15,7 +15,7 @@ import AddLocation from './Components/pages/AddLocation';
 import Loan from './Components/pages/Loan';
 import Pesticide from './Components/pages/Pesticide';
 import Fertilizer from './Components/pages/Fertilizer';
-
+import Location from './Components/pages/Location';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
         <Route path="loan" element={<Loan/>}/>
         <Route path="Pesticide" element={<Pesticide/>}/>
         <Route path="fertilizer" element={<Fertilizer/>}/>
-        
+        <Route path="Location" element={<Location/>}/>
        </Routes>
       </BrowserRouter>
       <Footer/>

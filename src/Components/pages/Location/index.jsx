@@ -1,76 +1,60 @@
 
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import { createClient } from '@supabase/supabase-js';
+import './Location.css';
+
+const supabaseUrl = 'https://vhgiorceculwhapsubbq.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoZ2lvcmNlY3Vsd2hhcHN1YmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTg4MTQzMzQsImV4cCI6MjAxNDM5MDMzNH0.Br1BNG84GcmJ205mT5Z98WzbmPms6isO57laqHQ5g8A';
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
 const Location = () => {
-  const validateForm = () => {
-    const sup_id = document.getElementById('sup_id').value;
-    const location_id = document.getElementById('location_id').value;
-    const longitude = document.getElementById('longitude').value;
-    const latitude = document.getElementById('latitude').value;
+  const [locations, setLocations] = useState([]);
 
-    if (sup_id.trim() === '') {
-      alert('Please enter your Supplier Id.');
-      return false;
-    }
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const { data, error } = await supabaseClient
+          .from('Location')
+          .select('Personal_id, Longitude, Latitude');
 
-    if (location_id.trim() === '') {
-      alert('Please enter your location id.');
-      return false;
-    }
+        if (error) {
+          console.error('Error fetching data:', error.message);
+        } else {
+          setLocations(data || []);
+        }
+      } catch (error) {
+        console.error('Unexpected error:', error.message);
+      }
+    };
 
-    if (longitude.trim() === '') {
-      alert('Please enter your longitude.');
-      return false;
-    }
-
-    if (latitude.trim() === '') {
-      alert('Please enter your latitude.');
-      return false;
-    }
-
-    // If all fields are filled, show success message with SweetAlert
-    Swal.fire({
-      title: 'Location',
-      text: "You've successfully registered",
-      icon: 'success'
-    });
-
-    return true;
-  };
+    fetchLocations();
+  }, []);
 
   return (
-    <div className="background-image4">
-      <div className="location">
-        <div className="location-container">
-          <form action="/submit-form" method="POST" onSubmit={(e) => {
-            e.preventDefault();
-            if (validateForm()) {
-              document.forms[0].submit();
-            }
-          }}>
-            <h1 id="header_18" className="form-header" data-component="header">Location</h1>
-            <div className="form-group">
-              <label htmlFor="sup_id">Supplier Id</label>
-              <input type="text" className="form-control" id="sup_id" name="sup_id" placeholder="Enter your Supplier Id" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="location_id">Location ID</label>
-              <input type="text" className="form-control" id="location_id" name="location_id" placeholder="Enter your location id" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="longitude">Longitude</label>
-              <input type="text" className="form-control" id="longitude" name="longitude" placeholder="Enter your Longitude" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="latitude">Latitude</label>
-              <input type="text" className="form-control" id="latitude" name="latitude" placeholder="Enter your latitude" />
-            </div>
-            <br />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </div>
-      </div>
+  <div className="background-LocationPic">"
+    <div className='locate'>
+      <h1>Find our locations here</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Personal id</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          {locations.map((location) => (
+            <tr key={location.Personal_id}>
+              <td>{location.Personal_id}</td>
+              <td>{location.Longitude}</td>
+              <td>{location.Latitude}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     </div>
   );
 };
