@@ -1,3 +1,38 @@
+
+.col-50-B {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  
+  .icon-container-B {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .fa-cc-visa-B, .fa-cc-amex-B, .fa-cc-mastercard-B, .fa-cc-discover-B {
+    font-size: 30px;
+    color: #ccc;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  .btn-BB{
+    padding-left: 220px;
+  }
+  
+=======
 .background-BuyNowPic {
   background-image: url('C:/Users/User/Desktop/Last Project/final-project-final/src/Components/pages/BuyNow/share.webp');
   background-size: cover;
@@ -84,3 +119,4 @@ label {
   align-items: center;
   justify-content: center;
 }
+

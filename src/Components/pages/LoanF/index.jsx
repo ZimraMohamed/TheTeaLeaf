@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import supabase from '../../../supa/supabase/supabaseClient';
-import Loan1 from './Loan1.css';
+import Loanf from './LoanF.css';
 
 
 
-const Loan = () => {
+const LoanF = () => {
   
   const [formData, setFormData] = useState({
     
     l_id: '',
     Personal_id: '',
-    l:'',
-    type:'',
+    Kg:'',
+    typeF:'',
   });
 
   const showAlert = (message) => {
@@ -22,11 +22,11 @@ const Loan = () => {
     e.preventDefault();
 
     const personalId = document.getElementById('Personal_id').value;
-    const l = document.getElementById('l').value;
-    const type = document.getElementById('type').value;
+    const Kg = document.getElementById('Kg').value;
+    const typeF = document.getElementById('typeF').value;
 
     
-    if ( !personalId  || !l || !type) {
+    if ( !personalId  || !Kg || !typeF) {
       showAlert('Please fill out all fields.');
       return;
     }
@@ -34,8 +34,8 @@ const Loan = () => {
     const formDataToUpdateSupabase = {
       
       Personal_id: personalId,
-      l: l,
-      type: type,
+      Kg: Kg,
+      typeF: typeF,
     };
 
     insertDataIntoSupabase(formDataToUpdateSupabase);
@@ -44,11 +44,11 @@ const Loan = () => {
   
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
-      const { data, error } = await supabase.from('Pesticides').insert([
+      const { data, error } = await supabase.from('Fertilizer').insert([
         {
           Personal_id: formDataToUpdateSupabase.Personal_id,
-          l: formDataToUpdateSupabase.l,
-          type: formDataToUpdateSupabase.type,
+          Kg: formDataToUpdateSupabase.Kg,
+          typeF: formDataToUpdateSupabase.typeF,
         },
       ]);
   
@@ -64,18 +64,18 @@ const Loan = () => {
   };
 
   return (
-    <div className="baclround-imagez">
-      <div className="Loan">
+    <div className="baclroundd-imagey">
+      <div className="LoanF">
         <div className="Loan-container">
           <form onSubmit={gatDataIntoSupabase}>
             <h1 className="form-header" data-component="header">
-              Apply Pesticide
+              Apply Fertilizer
             </h1>
             
             <div className="form-group">
               <label htmlFor="Personal_id">NIC</label>
               <input
-                type="text"
+                type_1="text"
                 className="form-control"
                 id="Personal_id"
                 name="Personal_id"
@@ -83,26 +83,26 @@ const Loan = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="l">Poverty</label>
+              <label htmlFor="Kg">Weight</label>
               <input
-                type="l"
+                type_1="Kg"
                 className="form-control"
-                id="l"
-                name="l"
-                placeholder="l"
+                id="Kg"
+                name="Kg"
+                placeholder="Kg"
               />
               </div>
               <div class="form-group">
-    <label for="type">Type</label>
-    <select class="form-control" id="type" name="type">
-      <option value="Carbosulfan">Carbosulfan</option>
-      <option value="Thiamethoxam">Thiamethoxam</option>
-      <option value="Diazinon">Diazinon</option>
+    <label for="typeF">Type</label>
+    <select class="form-control" id="typeF" name="typeF">
+      <option value="ERP">ERP</option>
+      <option value="MOP">MOP</option>
+      <option value="Urea">Urea</option>
     </select>
   </div>
             
             <br />
-            <button type="submit" className="btn btn-primary">
+            <button typeF="submit" className="btn btn-primary">
               Submit
             </button>
           </form>
@@ -114,4 +114,4 @@ const Loan = () => {
   );
 };
 
-export default Loan;
+export default LoanF;

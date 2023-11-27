@@ -37,13 +37,13 @@ const NavBar=()=>{
 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="loan"><div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Loan
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">monetary</a></li>
-    <li><a class="dropdown-item" href="#">pesticides</a></li>
-    <li><a class="dropdown-item" href="#">fertilizer</a></li>
+    <li><a class="dropdown-item" href="Monetary">monetary</a></li>
+    <li><a class="dropdown-item" href="Pesticide">pesticides</a></li>
+    <li><a class="dropdown-item" href="Fertilizer">fertilizer</a></li>
   </ul>
 </div>
         </a>
