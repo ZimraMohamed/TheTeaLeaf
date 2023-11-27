@@ -12,8 +12,12 @@ import BuyNow from './Components/pages/BuyNow';
 import Customer from './Components/pages/Customer';
 import ExploreProducts from './Components/pages/ExploreProducts';
 import AddLocation from './Components/pages/AddLocation';
-import Loan from './Components/pages/Loan';
 import Location from './Components/pages/Location';
+import Monetary from './Components/pages/Monetary';
+import Pesticide from './Components/pages/Pesticide';
+import Fertilizer from './Components/pages/Fertilizer';
+import Loan from './Components/pages/Loan';
+import LoanF from './Components/pages/LoanF';
 
 
 
@@ -26,6 +30,7 @@ function App() {
       <NavBar/>
       <BrowserRouter>
       <Routes>
+      
       <Route path="/" element={<Home />} />
         <Route path="Login" element={<Login />} />
         <Route path="Customer" element={<Customer/>}/>
@@ -36,8 +41,14 @@ function App() {
         <Route path="ExploreProducts" element={<ExploreProducts/>}/>
         <Route path="buyNow" element={<BuyNow/>}/>
         <Route path="AddLocation" element={<AddLocation/>}/>
-        <Route path="loan" element={<Loan/>}/>
         <Route path="Location" element={<Location/>}/>
+        <Route path="Monetary" element={<Monetary/>}/>
+        <Route path="Pesticide" element={<Pesticide/>}/>
+        <Route path="Fertilizer" element={<Fertilizer/>}/>
+        <Route path="Loan" element={<Loan/>}/>
+        <Route path="LoanF" element={<LoanF/>}/>
+        
+        
        </Routes>
       </BrowserRouter>
       <Footer/>

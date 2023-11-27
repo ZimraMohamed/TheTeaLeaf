@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import NavBar from "../../molecules/NavBar";
-import Footer from "../../molecules/Footer";
 import './Supplier.css';
-import Swal from 'sweetalert2';
 import supabase from '../../../supa/supabase/supabaseClient';
 
 

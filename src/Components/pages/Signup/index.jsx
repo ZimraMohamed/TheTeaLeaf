@@ -1,8 +1,6 @@
 import react from "react"
-import NavBar from "../../molecules/NavBar";
-import Footer from "../../molecules/Footer";
 import './signup.css';
-import Swal from 'sweetalert2';
+
 
 
 const Signup = () =>{
