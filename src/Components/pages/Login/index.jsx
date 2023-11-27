@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './login1.css';
 import React, { useState } from "react";
 import supabase from '../../../supa/supabase/supabaseClient';
+import { useHistory } from 'react-router-dom';
+
 
 const Login = () => {
   const [personalId, setPersonalId] = useState("");
@@ -27,6 +29,7 @@ const Login = () => {
       
       window.alert("Login successful!");
 
+
       
     } catch (error) {
       console.error("Login information insertion error", error.message);
@@ -51,6 +54,7 @@ const Login = () => {
         .eq('Personal_id', personalId)
         .eq('password', password)
         .single();
+
 
       const customerQuery = await supabase
         .from('Customer')
@@ -124,7 +128,7 @@ const Login = () => {
            
             </div>
           </div>
-          
+
         </form>
       </div>
     </div>

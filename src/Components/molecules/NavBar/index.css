@@ -75,6 +75,14 @@
     width: 50%;
     height: 25%;
   }
+
+  .dropdown-menu{
+    background-color: #dcece1;
+  }
+  .toggle{
+    background-color:#051b0c;
+    padding-top: 1px;
+  }
   
   
   
