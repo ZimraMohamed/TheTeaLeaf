@@ -47,6 +47,7 @@ const Login = () => {
         .eq('password', password)
         .single();
 
+
       const supplierQuery = await supabase
         .from('Supplier')
         .select('*')
@@ -132,4 +133,5 @@ const Login = () => {
 };
 
 export default Login;
+
 

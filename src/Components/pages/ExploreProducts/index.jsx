@@ -43,7 +43,9 @@ const ExploreProducts = () => {
         <h5 class="card-title">Black Tea Mini </h5>
         <p class="card-text">Price: 650 Rs<br/>Weight: 200g</p>
 
+
         <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
+
 
         </div>
       </div>
@@ -55,7 +57,9 @@ const ExploreProducts = () => {
         <h5 class="card-title">Green Tea Mini</h5>
         <p class="card-text">Price: 500 Rs<br/>Weight: 200g</p>
 
+
         <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
+
 
         </div>
       </div>
@@ -80,5 +84,4 @@ const ExploreProducts = () => {
 
 
 export default ExploreProducts;
-
 
