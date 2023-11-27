@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './login1.css';
 import React, { useState } from "react";
 import supabase from '../../../supa/supabase/supabaseClient';
+import { useHistory } from 'react-router-dom';
 
 
 const Login = () => {
@@ -45,6 +46,7 @@ const Login = () => {
         .eq('Personal_id', personalId)
         .eq('password', password)
         .single();
+
 
       const supplierQuery = await supabase
         .from('Supplier')

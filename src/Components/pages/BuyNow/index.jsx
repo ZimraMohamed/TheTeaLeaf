@@ -7,8 +7,9 @@ const BuyNow = () =>{
 
     return(
       
-              
+      <div className="background-BuyNowPic">"
               <div class="col-50-B">
+                <div className="payment">
                 <h3>Payment</h3>
                 <label for="fname">Accepted Cards</label>
                 <div class="icon-container-B">
@@ -38,8 +39,8 @@ const BuyNow = () =>{
             <a class="btn-0" aria-current="page" href="/">Payment</a>
             </div>
             </div>
-          
-    
+            </div>
+    </div>
 
     )
 }

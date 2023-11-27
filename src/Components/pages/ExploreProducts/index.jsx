@@ -4,6 +4,7 @@ import greenTea from './greenTea.jpg';
 import teaBags from './teaBags.jpg';
 import blackTeaMini from './blackTeaMini.jpg';
 import greenTeaMini from './greenTeaMini.PNG';
+
 import './ExploreProducts.css';
 
 const ExploreProducts = () => {
@@ -22,6 +23,7 @@ const ExploreProducts = () => {
             </div>
           </div>
         </div>
+
   <div class="col">
     <div class="card">
       <div class="card-body">
@@ -60,6 +62,7 @@ const ExploreProducts = () => {
         <h5 class="card-title">Green Tea</h5>
         <p class="card-text">Price: 900 Rs<br/>Weight: 500g</p>
         <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
+
         </div>
       </div>
     </div>
@@ -70,4 +73,6 @@ const ExploreProducts = () => {
   );
 };
 
+
 export default ExploreProducts;
+
