@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './login1.css';
 import React, { useState } from "react";
 import supabase from '../../../supa/supabase/supabaseClient';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
   const [personalId, setPersonalId] = useState("");
@@ -121,14 +122,16 @@ const Login = () => {
                   <center>Don't have an account? Sign Up here</center>
                 </a>
               </p>
-           
+
             </div>
           </div>
-          
+
         </form>
       </div>
     </div>
   );
 };
 
+
 export default Login;
+
