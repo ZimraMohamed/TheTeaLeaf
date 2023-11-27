@@ -29,6 +29,7 @@ const Login = () => {
       
       window.alert("Login successful!");
 
+
       
     } catch (error) {
       console.error("Login information insertion error", error.message);
@@ -47,13 +48,13 @@ const Login = () => {
         .eq('password', password)
         .single();
 
-
       const supplierQuery = await supabase
         .from('Supplier')
         .select('*')
         .eq('Personal_id', personalId)
         .eq('password', password)
         .single();
+
 
       const customerQuery = await supabase
         .from('Customer')
@@ -124,8 +125,10 @@ const Login = () => {
                   <center>Don't have an account? Sign Up here</center>
                 </a>
               </p>
+           
             </div>
           </div>
+
         </form>
       </div>
     </div>
