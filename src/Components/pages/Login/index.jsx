@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import supabase from '../../../supa/supabase/supabaseClient';
 import { useHistory } from 'react-router-dom';
 
+
 const Login = () => {
   const [personalId, setPersonalId] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +28,7 @@ const Login = () => {
 
       
       window.alert("Login successful!");
+
 
       
     } catch (error) {
@@ -52,6 +54,7 @@ const Login = () => {
         .eq('Personal_id', personalId)
         .eq('password', password)
         .single();
+
 
       const customerQuery = await supabase
         .from('Customer')
@@ -122,7 +125,6 @@ const Login = () => {
                   <center>Don't have an account? Sign Up here</center>
                 </a>
               </p>
-
             </div>
           </div>
 
@@ -133,5 +135,7 @@ const Login = () => {
 };
 
 
+
 export default Login;
+
 

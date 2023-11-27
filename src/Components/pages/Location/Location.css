@@ -1,5 +1,4 @@
 
-
 .background-LocationPic {
   background-image: url('C:/Users/User/Desktop/Last Project/final-project-final/src/Components/pages/Location/message-112607795-1458515954802555389.png');
  
@@ -39,11 +38,13 @@ table {
 
 th, td {
 
-  border: 1px solid #090909;
+
+  
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-  font-weight: bold;
 }
+
 
 th {
   background-color: #fbf7f7;

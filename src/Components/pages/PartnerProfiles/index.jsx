@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import './PartnerProfiles.css';
 import supabase from '../../../supa/supabase/supabaseClient';
 
-
 const PartnerProfile = () => {
 
   const [formData, setFormData] = useState({
@@ -13,7 +12,6 @@ const PartnerProfile = () => {
     email: '',
     plucked_date: '',
     Personal_id: '',
-
 
   });
 
@@ -41,7 +39,6 @@ const PartnerProfile = () => {
 
 
     const formDataToUpdateSupabase = {
-
       lot_id: lot_id,
       total: total,
       plucked_date: new Date(plucked_date).toISOString(),
