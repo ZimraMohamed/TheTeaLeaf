@@ -4,6 +4,7 @@ import './PartnerProfiles.css';
 import supabase from '../../../supa/supabase/supabaseClient';
 
 const PartnerProfile = () => {
+
   const [formData, setFormData] = useState({
     lot_id: '',
     total: '',
@@ -11,6 +12,7 @@ const PartnerProfile = () => {
     email: '',
     plucked_date: '',
     Personal_id: '',
+
   });
 
 
@@ -49,7 +51,9 @@ const PartnerProfile = () => {
     };
 
     insertDataIntoSupabase(formDataToUpdateSupabase);
+
   };
+
 
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
@@ -131,6 +135,7 @@ const PartnerProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="plucked_date">Plucked date</label>
               <input
@@ -142,6 +147,7 @@ const PartnerProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -154,6 +160,7 @@ const PartnerProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
+
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
