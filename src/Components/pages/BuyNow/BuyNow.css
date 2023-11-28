@@ -53,9 +53,11 @@
     margin-bottom: 10px;
   }
   .btn-BB{
-    padding-left: 220px;
+    padding-left: 0px;
+    margin-left: 0.000px;
+    justify-content: center;
+    align-items: center;
   }
-  
 
 .background-BuyNowPic {
   background-image: url('C:/Users/User/Desktop/Last Project/final-project-final/src/Components/pages/BuyNow/share.webp');
