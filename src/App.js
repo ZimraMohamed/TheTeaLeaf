@@ -23,6 +23,7 @@ import AdminDashboard_2 from './Components/pages/AdminDashboard_2';
 
 
 
+
 function App() {
   return (
     
@@ -32,6 +33,7 @@ function App() {
       <Routes>
       
       <Route path="/" element={<Home />} />
+
         <Route path="Login" element={<Login />} />
         <Route path="Customer" element={<Customer/>}/>
         <Route path="Manager" element={<Manager/>}/>

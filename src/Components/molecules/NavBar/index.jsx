@@ -54,7 +54,11 @@ const NavBar=()=>{
     Loan
   </button>
   <ul class="dropdown-menu">
+
+    <li><a class="dropdown-item" href="Loan">monetary</a></li>
+
     <li><a class="dropdown-item" href="Monetary">monetary</a></li>
+
     <li><a class="dropdown-item" href="Pesticide">pesticides</a></li>
     <li><a class="dropdown-item" href="Fertilizer">fertilizer</a></li>
   </ul>

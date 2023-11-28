@@ -23,11 +23,14 @@ const PartnerProfile = () => {
     }
   }, []);
 
+
   const showAlert = (message) => {
     alert(message);
   };
 
+
   const getDataIntoSupabase = async (e) => {
+
     e.preventDefault();
 
     const { lot_id, total, email, weight, plucked_date, Personal_id } = formData;

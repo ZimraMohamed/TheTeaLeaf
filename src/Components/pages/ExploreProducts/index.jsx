@@ -23,10 +23,12 @@ const ExploreProducts = () => {
             </div>
           </div>
         </div>
+
         <div class="col">
     <div class="card">
       <div class="card-body">
       <img src={blackTea} alt="theTeaLeaf" width="300px" height="300px" />
+
         <h5 class="card-title">Black Tea</h5>
         <p class="card-text">Price: 850 Rs<br/>Weight: 500g</p>
         <br/><br/>

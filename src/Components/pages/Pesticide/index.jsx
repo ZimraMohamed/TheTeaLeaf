@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import carbo from './carbosalfan.webp';
 import guard from './Guardian.jpg';
@@ -50,3 +51,4 @@ const Pesticide= () => {
 };
 
 export default Pesticide;
+
