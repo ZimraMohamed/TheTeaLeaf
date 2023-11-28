@@ -36,7 +36,7 @@ const BuyNow = () =>{
                   </div>
                 </div>
             <div class= "btn-BB">
-            <a class="btn-0" aria-current="page" href="/">Payment</a>
+            <a class="btn-0" aria-current="page" href="/">Submit</a>
             </div>
             </div>
             </div>
