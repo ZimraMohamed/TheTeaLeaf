@@ -43,14 +43,14 @@ const Footer = () => {
       <div class="direct-contact-container">
 
         <ul class="contact-list">
-          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">City, State</span></i></li>
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place"><a href="https://maps.app.goo.gl/zya2zpKqt4RyDCf78" title="View Location">Niyagama,Galle,Sri Lanka</a></span></i></li>
           
           <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(+94)076 1010 000 </a></span></i></li>
           
           <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">thetealeaf23@gmail.com</a></span></i></li>
 
           <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text FB"><a href="https://www.facebook.com/profile.php?id=100067867170062&mibextid=ZbWKwL" title="Follow this page"> Andaradeniya Tea Factory</a></span></i></li>
-        
+
           <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text vlog"><a href="https://youtu.be/aKQquB9WI6M?si=cMTv42BKMbgNHDXe" title="Follow this page">Tea Plantation Vlog</a></span></i></li>
         </ul>
         <hr/>

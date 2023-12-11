@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import supabase from '../../../supa/supabase/supabaseClient';
 import  './AdminDashboard.css';
-
 const AdminDashboard = () => {
   const [locations, setLocations] = useState([]);
 
@@ -50,4 +49,6 @@ const AdminDashboard = () => {
   );
 };
 
+
 export default AdminDashboard;
+

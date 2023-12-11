@@ -1,4 +1,3 @@
-
 import NavBar from './Components/molecules/NavBar';
 import Footer from './Components/molecules/Footer';
 import Home from './Components/pages/Home';
@@ -29,6 +28,7 @@ import LoginC from './Components/pages/LoginC';
 import CustomerDashboard from './Components/pages/CustomerDashboard';
 
 
+
 function App() {
   return (
     
@@ -38,6 +38,7 @@ function App() {
       <Routes>
       
       <Route path="/" element={<Home />} />
+
         <Route path="Login" element={<Login />} />
         <Route path="LoginM" element={<LoginM/>}/>
         <Route path="Customer" element={<Customer/>}/>
@@ -62,10 +63,8 @@ function App() {
         <Route path="AdminDashboard_4" element={<AdminDashboard_4/>}/>
         <Route path="LoginC" element={<LoginC/>}/>
         <Route path="CustomerDashBoard" element={<CustomerDashboard/>}/>
-        
-        
-        
-        
+
+  
        </Routes>
       </BrowserRouter>
       <Footer/>

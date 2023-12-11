@@ -19,11 +19,24 @@ const ExploreProducts = () => {
               <h5 className="card-title">Black Tea</h5>
               <p className="card-text">Price: 850 Rs<br />Weight: 500g</p>
               <br /><br />
-              <a className="btn-0" aria-current="page" href="buyNow">Buy Now</a>
+
+              <a className="btn-0" aria-current="page" href="/">Buy Now</a>
             </div>
           </div>
         </div>
 
+        <div class="col">
+    <div class="card">
+      <div class="card-body">
+      <img src={blackTea} alt="theTeaLeaf" width="300px" height="300px" />
+
+        <h5 class="card-title">Black Tea</h5>
+        <p class="card-text">Price: 850 Rs<br/>Weight: 500g</p>
+        <br/><br/>
+        <a class="btn-0" aria-current="page" href="/">Buy Now</a>
+      </div>
+      </div>
+    </div>
   <div class="col">
     <div class="card">
       <div class="card-body">
@@ -31,8 +44,8 @@ const ExploreProducts = () => {
         <h5 class="card-title">Tea Bags</h5>
         <p class="card-text">Price: 900 Rs<br/>Weight: 500g</p>
         <br/><br/>
-        <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
 
+        <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
         </div>
       </div>
     </div>
@@ -45,8 +58,6 @@ const ExploreProducts = () => {
 
 
         <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
-
-
         </div>
       </div>
     </div>
@@ -58,8 +69,8 @@ const ExploreProducts = () => {
         <p class="card-text">Price: 500 Rs<br/>Weight: 200g</p>
 
 
-        <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
 
+        <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
 
         </div>
       </div>
@@ -70,7 +81,8 @@ const ExploreProducts = () => {
       <img src={greenTea} alt="theTeaLeaf" width="300px" height="300px" />
         <h5 class="card-title">Green Tea</h5>
         <p class="card-text">Price: 900 Rs<br/>Weight: 500g</p>
-        <a class="btn-0" aria-current="page" href="buyNow">Buy Now</a>
+
+        <a class="btn-0" aria-current="page" href="/">Buy Now</a>
 
         </div>
       </div>
@@ -81,6 +93,7 @@ const ExploreProducts = () => {
       
   );
 };
+
 
 
 export default ExploreProducts;
