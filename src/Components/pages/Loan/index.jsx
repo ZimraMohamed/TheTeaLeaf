@@ -83,7 +83,7 @@ const Loan = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="l">Poverty</label>
+              <label htmlFor="l">Capacity</label>
               <input
                 type="l"
                 className="form-control"

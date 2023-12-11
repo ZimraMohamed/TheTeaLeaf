@@ -73,7 +73,7 @@ const Customer = () => {
       if (error) {
         alert('Error inserting data into Supabase: ' + error.message);
       } else {
-        alert('Data inserted into Supabase: ' + JSON.stringify(data));
+        
         showAlert('You are successfully registered.');
       }
     } catch (error) {

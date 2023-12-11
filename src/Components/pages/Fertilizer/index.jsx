@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ERP from './ERP.jpg';
 import mop from './mop.jpg';
-import Urea from './urea.jpg';
 
 
 const Fertilizer= () => {
@@ -48,4 +47,6 @@ const Fertilizer= () => {
   );
 };
 
+
 export default Fertilizer;
+

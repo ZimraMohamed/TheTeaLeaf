@@ -1,8 +1,11 @@
 .col-50-B {
+
   width: 50%;
   margin: 0 auto;
+
   padding: 20px;
 }
+
 
 
 .icon-container-B {
@@ -119,3 +122,4 @@ font-weight: bold;
 align-items: center;
 justify-content: center;
 }
+
