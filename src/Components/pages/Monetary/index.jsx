@@ -58,7 +58,7 @@ const Monetary = () => {
       console.log('Error checking user login: ' + error.message);
       return false;
     }
-  };
+  };  
 
   const insertDataIntoSupabase = async (formDataToUpdateSupabase) => {
     try {
