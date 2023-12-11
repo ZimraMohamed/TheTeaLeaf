@@ -2,8 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import supabase from '../../../supa/supabase/supabaseClient';
 import { useNavigate } from 'react-router-dom';
+import './loginM.css'
 
-const Login = () => {
+const LoginM = () => {
   const Navigate = useNavigate();
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,30 +13,30 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email && password) {
-      await handleSupplierLogin();
+      await handleManagerLogin();
     } else {
       alert('Please fill out all the fields!');
     }
   };
 
-  const handleSupplierLogin = async () => {
+  const handleManagerLogin = async () => {
     try {
-      const { data:SupplierData, error:SupplierError } = await supabase
-        .from('Supplier')
+      const { data: ManagerData, error: ManagerError } = await supabase
+        .from('Manager')
         .select('Personal_id,password,full_name')
         .eq('email', email);
 
-      if (SupplierError) {
-        alert(SupplierError.message);
+      if (ManagerError) {
+        alert(ManagerError.message);
         return;
       }
 
-      if (SupplierData &&SupplierData.length > 0) {
-        const storedPassword =SupplierData[0].password;
+      if (ManagerData && ManagerData.length > 0) {
+        const storedPassword = ManagerData[0].password;
 
         if (password === storedPassword) {
-          alert(`Hello ${SupplierData[0].full_name}`);
-          Navigate('/SupplierDashboard');
+          alert(`Hello ${ManagerData[0].full_name}`);
+          Navigate('/ManagerDashboard');
         } else {
           alert('Wrong password!');
         }
@@ -105,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginM;
