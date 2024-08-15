@@ -1,9 +1,15 @@
-
 import React from 'react';
 import './ManagerDashboard.css';
 import graph from './graph.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const ManagerDashboard = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    
+    navigate('/');
+  }
   return (
     <div className="container">
       <aside className="sidebar">
@@ -43,22 +49,18 @@ const ManagerDashboard = () => {
             </a>
           </li>
           <li>
-            <a href="#">
-              <ion-icon name="settings-outline"></ion-icon>
-              <span>Settings</span>
+            <a href="Products">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>Edit Tea Products</span>
             </a>
           </li>
+          
         </ul>
         <div className="hr"></div>
         <ul className="menu two">
+         
           <li>
-            <a href="#">
-              <ion-icon name="help-circle-outline"></ion-icon>
-              <span>Help</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
+          <a href="#" onClick={handleLogout}>
               <ion-icon name="log-out-outline"></ion-icon>
               <span>Log out</span>
             </a>
@@ -73,3 +75,4 @@ const ManagerDashboard = () => {
 };
 
 export default ManagerDashboard;
+
